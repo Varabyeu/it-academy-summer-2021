@@ -15,19 +15,18 @@ def likes(names):
     if len(names) == 0:
         text = "no one likes this"
     elif len(names) == 1:
-        text = str(names[0], "likes this")
+        name = str(names[0])
+        text = str(name, "likes this")
     elif len(names) == 2:
-        text = str(names[0] + " and " + names[1]
-                   + " like this")
+        name = str(names[0] + " add" + names[1])
+        text = str(name + " like this")
     elif len(names) == 3:
-        text = str(names[0] + ", "
-                   + names[1] + " and "
-                   + names[2] + " like this")
+        name = str(names[0] + ", " + names[1] + " and " + names[2])
+        text = str(name + " like this")
     else:
+        name = str(names[0] + ", " + names[1])
         x = len(names) - 2
-        text = str(names[0] + ", "
-                   + names[1] + " and " + str(x)
-                   + " others like this")
+        text = str(name + " and " + str(x) + " others like this")
     return text
 
 
