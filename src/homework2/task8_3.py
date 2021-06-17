@@ -17,18 +17,17 @@ def likes(names):
     elif len(names) == 1:
         text = str(names[0], "likes this")
     elif len(names) == 2:
-        text = str(names[0]
-                   + " and " + names[1]
-                   + " like this")
+        text = str(names[0] + " and " + names[1] +
+                   " like this")
     elif len(names) == 3:
-        text = str(names[0] + ", "
-                   + names[1] + " and "
-                   + names[2] + " like this")
+        text = str(names[0] + ", " +
+                   names[1] + " and " +
+                   names[2] + " like this")
     else:
         x = len(names) - 2
-        text = str(names[0] + ", "
-                   + names[1] + " and " + str(x)
-                   + " others like this")
+        text = str(names[0] + ", " +
+                   names[1] + " and " + str(x) +
+                   " others like this")
     return text
 
 
