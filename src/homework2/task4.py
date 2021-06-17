@@ -1,6 +1,6 @@
 text = str(input())
 i = 0
-j = len(text) -1
+j = len(text) - 1
 x = 0
 y = 0
 

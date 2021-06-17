@@ -10,7 +10,6 @@ dinner_recipe = '''<html><body><table>
 </table></body></html>'''
 
 
-
 tree = etree.fromstring(dinner_recipe)
 
 # For invalid HTML use http://effbot.org/zone/element-soup.htm

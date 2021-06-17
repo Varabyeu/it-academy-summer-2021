@@ -13,10 +13,12 @@ else:
                 text = "Не"
                 break
         else:
-            if Num // (10**(len_num - x)) % 10 == Num % (10**x) // (10**(x - 1)):
+            if Num // (10**(len_num - x)) % 10 == \
+                    Num % (10**x) // (10**(x - 1)):
                 text = "Пара"
             else:
                 text = "Не"
                 break
         x += 1
     print(text)
+
