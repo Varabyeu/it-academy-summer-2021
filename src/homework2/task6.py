@@ -21,4 +21,3 @@ else:
                 break
         x += 1
     print(text)
-
