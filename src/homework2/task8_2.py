@@ -16,7 +16,8 @@ def longest(a1, a2):
     for lit in a1:
         if lit not in str_new and lit != ' ':
             str_new += lit
-    return str_new
+    str_sorted = "".join(sorted(str_new))
+    return str_sorted
 
 
 print(longest("aretheyhere", "yestheyarehere"))

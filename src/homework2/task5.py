@@ -1,14 +1,13 @@
-pre = 1
-last = 2
-pos = int(input())
-if pos <= 2:
-    num = pre
-elif pos == 3:
-    num = last
+position = int(input())
+list_Fibonacci = [0, 1]
+if position <= len(list_Fibonacci):
+    print(list_Fibonacci[position - 1])
 else:
-    while pos - 4 >= 0:
-        num = last + pre
-        pre = last
-        last = num
-        pos -= 1
-print(num)
+    i = 2
+    while i <= position - 1:
+        new_pos = list_Fibonacci[i - 2] + list_Fibonacci[i - 1]
+        if i == position - 1:
+            print(new_pos)
+        else:
+            list_Fibonacci.append(new_pos)
+        i += 1

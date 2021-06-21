@@ -1,8 +1,20 @@
-findMax = (input("Enter your word:"))
+# Найти самое длинное слово в введенном предложении.
+# Учтите что в предложении
+# есть знаки препинания.
+# Подсказки:
+# - my_string.split([chars]) возвращает список строк.
+# - len(list) - количество элементов в списке
+# Задачу поместите в файл task2.py в папке src/homework2.
+
+findMax = (input("Enter your sentence:"))
 without_symbols = findMax.replace("(" or "(" or "-" or "." or ",", "")
-li = list(without_symbols.split())
-listed_li = []
-for i in li:
-    listed_li.append(len(i))
-index_max = listed_li.index(max(listed_li))
-print(li[index_max])
+word = ''
+calc = ''
+for i in without_symbols:
+    if i == ' ':
+        if len(calc) > len(word):
+            word = calc
+        calc = ''
+    else:
+        calc += i
+print(word)
