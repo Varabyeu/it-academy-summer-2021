@@ -3,10 +3,9 @@ import copy
 # List practice
 # Используйте генератор списков чтобы получить
 # следующий: ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
-list_first_lit = "ab"
-list_second_lit = "bcd"
-list_gen = [frst_lit + sec_lit for first_lit in list_first_lit for sec_lit in list_scnd_lit]
-
+lst_f_l = "ab"
+lst_s_l = "bcd"
+list_gen = [f_l + s_l for f_l in lst_f_l for s_l in lst_s_l]
 print(list_gen)
 
 

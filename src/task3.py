@@ -22,4 +22,3 @@ tuple_one_el = ([1, 2, 3], )
 for element in tuple_one_el[0]:
     print(element)
 print(len(tuple_one_el))
-
