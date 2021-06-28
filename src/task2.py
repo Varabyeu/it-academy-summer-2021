@@ -3,12 +3,10 @@ import copy
 # List practice
 # Используйте генератор списков чтобы получить
 # следующий: ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
-list1 = "ab"
-list2 = "bcd"
-list_gen = []
-for element1 in list1:
-    for element2 in list2:
-        list_gen.append(element1 + element2)
+list_first_lit = "ab"
+list_second_lit = "bcd"
+list_gen = [frst_lit + sec_lit for first_lit in list_first_lit for sec_lit in list_scnd_lit]
+
 print(list_gen)
 
 
@@ -20,20 +18,17 @@ print(sliced_list)
 
 # Используйте генератор списков чтобы получить
 # следующий ['1a', '2a', '3a', '4a'].
-list_wth_a = []
-list_num = [1, 2, 3, 4]
-for el in list_num:
-    list_wth_a.append(str(el) + "a")
-print(list_wth_a)
+list_num_and_a = [str(num) + "a" for num in range(1, 5)]
+print(list_num_and_a)
 
 
 # Одной строкой удалите элемент  '2a' из прошлого
 # списка и напечатайте его.
-print(list_wth_a.pop(1))
+print(list_num_and_a.pop(1))
 
 
 # Скопируйте список и добавьте в него элемент
 # '2a' так чтобы в исходном списке этого элемента не было.
-new_list = copy.deepcopy(list_wth_a)
+new_list = copy.deepcopy(list_num_and_a)
 new_list.append("2a")
 print(new_list)

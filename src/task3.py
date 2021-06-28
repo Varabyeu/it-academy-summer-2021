@@ -18,7 +18,8 @@ print(a, b, c)
 # Создайте кортеж из одного элемента, чтобы при итерировании по этому
 # элементы последовательно выводились значения 1, 2, 3.
 # Убедитесь что len() исходного кортежа возвращает 1.
-tuple_one_el = (a, )
-for element in tuple_one_el:
-    print(len(tuple_one_el), len(tuple_one_el) + 1, len(tuple_one_el) + 2)
+tuple_one_el = ([1, 2, 3], )
+for element in tuple_one_el[0]:
+    print(element)
 print(len(tuple_one_el))
+
