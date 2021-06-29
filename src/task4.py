@@ -14,5 +14,7 @@ for el in second_num_list:
         list_unicl_numbrs_scnd.append(el)
 count_unicl_numbrs_frst = len(list_unicl_numbrs_frst)
 count_unicl_numbrs_scnd = len(list_unicl_numbrs_scnd)
-print("В первом списке количество различных чисел - {}.".format(count_unicl_numbrs_frst))
-print("Во втором списке количество различных чисел - {}.".format(count_unicl_numbrs_scnd))
+print("В первом списке количество "
+      "различных чисел - {}.".format(count_unicl_numbrs_frst))
+print("Во втором списке количество "
+      "различных чисел - {}.".format(count_unicl_numbrs_scnd))
