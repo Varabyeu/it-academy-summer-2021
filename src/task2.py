@@ -54,22 +54,26 @@ Russia
 
 num_countries = int(input("Введите количество стран: "))
 every_country = 1
-dict_cities_in_countries = {}
+dict_cities_in_cntries = {}
 while every_country <= num_countries:
-    name_country_city = list(input("Введите страну и города №{}: ".format(every_country)).split())
+    name_country_city = list(input("Введите"
+                                   " страну и города №{}:"
+                                   " ".format(every_country)).split())
     country = name_country_city[0]
     dict_country_city = {country: name_country_city[1::]}
-    dict_cities_in_countries.update(dict_country_city)
+    dict_cities_in_cntries.update(dict_country_city)
     every_country += 1
 num_cities = int(input("Введите количество городов: "))
 every_city = 1
 list_countries = []
 while every_city <= num_cities:
-    searching_cities = input("Введите название города №{}: ".format(every_city)).split()
+    searching_cities = input("Введите"
+                             " название города №{}:"
+                             " ".format(every_city)).split()
     for searching_city in searching_cities:
-        for searching_country, cities in dict_cities_in_countries.items():
+        for srching_country, cities in dict_cities_in_cntries.items():
             if searching_city in cities:
-                list_countries.append(searching_country)
+                list_countries.append(srching_country)
     every_city += 1
 for country in list_countries:
     print(country)
