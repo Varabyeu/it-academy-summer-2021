@@ -20,4 +20,3 @@ def the_closest_to_two(first_num):
 
 inputted_num = int(input('Введите число: '))
 print(the_closest_to_two(inputted_num))
-

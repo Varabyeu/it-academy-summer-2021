@@ -108,7 +108,8 @@ def task6_hw2():
         x = 1
         while x <= len_num // 2:
             if x == 1:
-                if num // (10 ** (len_num - x)) == num % (10 ** x) // (10 ** (x - 1)):
+                if num // (10 ** (len_num - x)) == num % (10 ** x) // \
+                        (10 ** (x - 1)):
                     text = "It is!"
                 else:
                     text = "Not, it isn't"
@@ -206,17 +207,24 @@ def task8_2_hw2():
 
 
 def task8_3_hw2():
-    # You probably know the "like" system from Facebook and other pages. People
-    # can "like" blog posts, pictures or other items. We want to create the
+    # You probably know the "like" system from Facebook
+    # and other pages. People
+    # can "like" blog posts, pictures or other items.
+    # We want to create the
     # text that should be displayed next to such an item.
-    # Implement a function likes :: [String] -> String, which must take in input
-    # array, containing the names of people who like an item. It must return the
+    # Implement a function likes :: [String] ->
+    # String, which must take in input
+    # array, containing the names of people who like an item.
+    # It must return the
     # display text as shown in the examples:
     # likes([]) # must be "no one likes this"
     # likes(["Peter"]) # must be "Peter likes this"
-    # likes(["Jacob", "Alex"]) # must be "Jacob and Alex like this"
-    # likes(["Max", "John", "Mark"]) # must be "Max, John and Mark like this"
-    # likes(["Alex", "Jacob", "Mark", "Max"]) # must be "Alex, Jacob and 2 others
+    # likes(["Jacob", "Alex"]) # must be "Jacob and A
+    # lex like this"
+    # likes(["Max", "John", "Mark"]) # must be "Max,
+    # John and Mark like this"
+    # likes(["Alex", "Jacob", "Mark", "Max"]) # must
+    # be "Alex, Jacob and 2 others
 
     def likes(names):
         if len(names) == 0:
@@ -276,7 +284,8 @@ def task8_5_hw2():
     # Highest and Lowest
 
     # In this little assignment you are given a string of
-    # space separated numbers, and have to return the highest and lowest number.
+    # space separated numbers, and have to return the
+    # highest and lowest number.
     # Example:
     # high_and_low("1 2 3 4 5")  # return "5 1"
     # high_and_low("1 2 -3 4 5") # return "5 -3"
@@ -472,7 +481,6 @@ def task2_hw4():
     # данный город.
 
     num_countries = int(input("Введите количество стран: "))
-    calc = 0
     country_cities_input = []
     cities_input = []
     for num_of_str in range(num_countries):
@@ -536,12 +544,8 @@ def task5_hw4():
     # Определите, какие языки знают все школьники и языки,
     # которые знает хотя бы один из школьников.
 
-    number_of_pupils = 3
-    pupil1_num_lang = 2
     pupil1_langs = ['Russian', 'English']
-    pupil2_num_lang = 3
     pupil2_langs = ['Russian', 'Belarusian', 'English']
-    pupil3_num_lang = 3
     pupil3_langs = ['Russian', 'Italian', 'French']
     pupil_all_langs = set(pupil1_langs + pupil2_langs + pupil3_langs)
     print("Языки, которые знают ученики: ")
@@ -614,5 +618,6 @@ def runner(*args):
     task5_hw4()
     task6_hw4()
     task7_hw4()
+
 
 runner()
