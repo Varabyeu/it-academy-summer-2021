@@ -6,24 +6,33 @@
 """
 
 
-def decorator(function):
-    saved_result = []
+# Cам декоратор
+def dec(fun):
+    def wrapper(a, b):
+        result_fun = fun(a, b)
+        try:
+            f = open('text.txt', 'x')
+            f.write(str(result_fun) + ' ')
+            f.close()
+        except FileExistsError:
+            f = open('text.txt', 'a')
+            f.write(str(result_fun) + ' ')
 
-    def wrapper(*args, **kwargs):
-        nonlocal saved_result
-        result_func = function(*args, **kwargs)
-        print(result_func)
-        saved_result += [result_func]
-        return saved_result
+        return result_fun
 
     return wrapper
 
 
-@decorator
-def function(a, b):
+@dec
+def func(a, b):
     return a + b
 
 
-print(function(2, 3))
-print(function(23, 3))
-print(function(28, 31))
+print(func(1, 2))
+print(func(3111, 2))
+print(func(7, 2))
+# Вывод на экран значений предыдущих результатов из файла
+f = open('text.txt', 'r')
+str_ = f.read().split()
+print([el for el in str_])
+f.close()
