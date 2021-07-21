@@ -4,8 +4,8 @@ Homework2 module with all tasks for task1 in homework5
 
 
 def task1_hw2(rub=2, kop=30, number=3):
-    """
-    Напишите программу, которая считает общую цену.
+
+    """Напишите программу, которая считает общую цену.
     Вводится M рублей и N копеек
     цена, а также количество S товара Посчитайте общую
     цену в рублях и копейках за L # товаров.
@@ -23,8 +23,9 @@ def task1_hw2(rub=2, kop=30, number=3):
 
 
 def task2_hw2(sentence='Самое Длинное Слово В Введенном предложении'):
-    """Найти самое длинное слово в введенном предложении.
 
+    """
+    Найти самое длинное слово в введенном предложении.
     Учтите что в предложении есть знаки препинания.
     Подсказки:
     - my_string.split([chars]) возвращает список строк.
@@ -46,6 +47,7 @@ def task2_hw2(sentence='Самое Длинное Слово В Введенно
 
 
 def task3_hw2(str_first='abc cde def'):
+
     """
     Вводится строка. Требуется удалить из нее
     повторяющиеся символы и все пробелы.
@@ -61,6 +63,7 @@ def task3_hw2(str_first='abc cde def'):
 
 
 def task4_hw2(text='Сколько Строчных и Прописных букв'):
+
     """
     Посчитать количество строчных (маленьких)
     и прописных (больших) букв в
@@ -80,6 +83,7 @@ def task4_hw2(text='Сколько Строчных и Прописных бук
 
 
 def task5_hw2(position=5):
+
     """
     Выведите n-ое число Фибоначчи, используя только временные
     переменные, Циклические операторы и условные операторы.
@@ -101,6 +105,7 @@ def task5_hw2(position=5):
 
 
 def task6_hw2(number=12321):
+
     """Определите, является ли число палиндромом (читается
     слева направо и справа # налево одинаково).
     Число положительное целое, произвольной длины.
@@ -134,6 +139,7 @@ def task6_hw2(number=12321):
 
 
 def task7_hw2(a=1, b=2, c=3):
+
     """
     Даны: три стороны треугольника. Требуется: проверить,
     действительно ли это
@@ -151,6 +157,7 @@ def task7_hw2(a=1, b=2, c=3):
 
 
 def task8_1_hw2():
+
     """
     Some numbers have funny properties. For example:
     89 --> 8¹ + 9² = 89 * 1
@@ -191,6 +198,7 @@ def task8_1_hw2():
 
 
 def task8_2_hw2():
+
     """
     Return a new sorted string, the longest possible,
     containing distinct letters - each taken only once -
@@ -216,6 +224,7 @@ def task8_2_hw2():
 
 
 def task8_3_hw2():
+
     """
     You probably know the "like" system from Facebook
     and other pages. People
@@ -259,6 +268,7 @@ def task8_3_hw2():
 
 
 def task8_4_hw2():
+
     """
     Usually when you buy something, you're asked whether your
     credit card number, phone number or answer to your most
@@ -293,6 +303,7 @@ def task8_4_hw2():
 
 
 def task8_5_hw2():
+
     """Highest and Lowest
 
     In this little assignment you are given a string of
