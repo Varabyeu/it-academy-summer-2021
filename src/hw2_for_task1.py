@@ -23,9 +23,8 @@ def task1_hw2(rub=2, kop=30, number=3):
 
 
 def task2_hw2(sentence='Самое Длинное Слово В Введенном предложении'):
+    """Найти самое длинное слово в введенном предложении.
 
-    """
-    Найти самое длинное слово в введенном предложении.
     Учтите что в предложении есть знаки препинания.
     Подсказки:
     - my_string.split([chars]) возвращает список строк.
@@ -47,8 +46,8 @@ def task2_hw2(sentence='Самое Длинное Слово В Введенно
 
 
 def task3_hw2(str_first='abc cde def'):
+    """Удаляем все повторяющиеся символы из строки
 
-    """
     Вводится строка. Требуется удалить из нее
     повторяющиеся символы и все пробелы.
     Например, если было введено "abc cde def",
@@ -63,8 +62,8 @@ def task3_hw2(str_first='abc cde def'):
 
 
 def task4_hw2(text='Сколько Строчных и Прописных букв'):
+    """Посчитать кол-во строчных и прописных букв
 
-    """
     Посчитать количество строчных (маленьких)
     и прописных (больших) букв в
     введенной строке. Учитывать только английские буквы.
@@ -83,8 +82,8 @@ def task4_hw2(text='Сколько Строчных и Прописных бук
 
 
 def task5_hw2(position=5):
+    """Вывод числа Фибоначчи по его позиции
 
-    """
     Выведите n-ое число Фибоначчи, используя только временные
     переменные, Циклические операторы и условные операторы.
     n - вводится
@@ -105,8 +104,9 @@ def task5_hw2(position=5):
 
 
 def task6_hw2(number=12321):
+    """Определите, является ли число палиндромом
 
-    """Определите, является ли число палиндромом (читается
+    Определите, является ли число палиндромом (читается
     слева направо и справа # налево одинаково).
     Число положительное целое, произвольной длины.
     Задача требует работать только с числами
@@ -139,8 +139,8 @@ def task6_hw2(number=12321):
 
 
 def task7_hw2(a=1, b=2, c=3):
+    """Проверка на треугальник
 
-    """
     Даны: три стороны треугольника. Требуется: проверить,
     действительно ли это
     стороны треугольника. Если стороны определяют треугольник,
@@ -157,8 +157,8 @@ def task7_hw2(a=1, b=2, c=3):
 
 
 def task8_1_hw2():
+    """Funny properties of some numbers
 
-    """
     Some numbers have funny properties. For example:
     89 --> 8¹ + 9² = 89 * 1
     695 --> 6² + 9³ + 5⁴= 1390 = 695 * 2
@@ -198,8 +198,8 @@ def task8_1_hw2():
 
 
 def task8_2_hw2():
+    """Return a new sorted string
 
-    """
     Return a new sorted string, the longest possible,
     containing distinct letters - each taken only once -
     coming from s1 or s2.
@@ -224,8 +224,8 @@ def task8_2_hw2():
 
 
 def task8_3_hw2():
+    """Likes
 
-    """
     You probably know the "like" system from Facebook
     and other pages. People
     can "like" blog posts, pictures or other items.
@@ -268,8 +268,8 @@ def task8_3_hw2():
 
 
 def task8_4_hw2():
+    """Encode
 
-    """
     Usually when you buy something, you're asked whether your
     credit card number, phone number or answer to your most
     secret question is still correct. However, since someone
@@ -303,7 +303,6 @@ def task8_4_hw2():
 
 
 def task8_5_hw2():
-
     """Highest and Lowest
 
     In this little assignment you are given a string of
