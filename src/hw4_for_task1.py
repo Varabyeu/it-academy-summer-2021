@@ -29,7 +29,10 @@ def task2_hw4(num_countries=2, num_cities=2):
     Для каждого из запроса выведите название страны, в котором находится
     данный город.
     """
-    list_country_cities = [['Russia', 'Moscow', 'SpB'], ['Ukraine', 'Kiev', 'Lviv']]
+    list_country_cities = [
+        ['Russia', 'Moscow', 'SpB'],
+        ['Ukraine', 'Kiev', 'Lviv']
+    ]
     list_searching_cities = ['Moscow', 'Lviv']
     country_cities_inputted = []
     cities_input = []
