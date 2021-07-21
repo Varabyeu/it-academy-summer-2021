@@ -19,7 +19,6 @@ from inspect import isfunction
 func_list_hw2 = [o[0] for o in getmembers(hw2) if isfunction(o[1])]
 func_list_hw3 = [o[0] for o in getmembers(hw3) if isfunction(o[1])]
 func_list_hw4 = [o[0] for o in getmembers(hw4) if isfunction(o[1])]
-all_func_list = [func_list_hw2, func_list_hw3, func_list_hw4]
 
 
 def runner(*args):
