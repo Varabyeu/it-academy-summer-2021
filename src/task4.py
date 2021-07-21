@@ -51,4 +51,3 @@ try:
                 years_file.write(str(year) + ':' + str(count_years) + '\n')
 except FileNotFoundError:
     print("File lost")
-

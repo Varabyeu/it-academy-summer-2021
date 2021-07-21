@@ -1,8 +1,19 @@
+"""Оформите решение задач из прошлых домашних работ в функции.
+Оформите решение задач из прошлых домашних работ в функции.
+Напишите функцию runner. (все станет проще когда мы изучим модули,
+getattr и setattr):
+  - runner() – все фукнции вызываются по очереди
+  - runner(‘func_name’) – вызывается только функцию func_name.
+  - runner(‘func’, ‘func1’...) - вызывает все переданные функции
+"""
+
+
 import hw2_for_task1 as hw2
 import hw3_for_task1 as hw3
 import hw4_for_task1 as hw4
 
-from inspect import getmembers, isfunction
+from inspect import getmembers
+from inspect import isfunction
 
 
 func_list_hw2 = [o[0] for o in getmembers(hw2) if isfunction(o[1])]

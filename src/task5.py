@@ -1,14 +1,21 @@
-    pupil1_langs = ['Russian', 'English']
-    pupil2_langs = ['Russian', 'Belarusian', 'English']
-    pupil3_langs = ['Russian', 'Italian', 'French']
-    pupil_all_langs = set(pupil1_langs + pupil2_langs + pupil3_langs)
-    print("Языки, которые знают ученики: ")
-    for langs in pupil_all_langs:
-        print(langs)
-    set_p1 = set(pupil1_langs)
-    set_p2 = set(pupil2_langs)
-    set_p3 = set(pupil3_langs)
-    one_more_lang = set_p1 & set_p2 & set_p3
-    print("Языки, которые знает хотя бы один из школьников: ")
-    for lang in one_more_lang:
-        print(lang)
+"""Написать программу которая находит ближайшую степень двойки
+ к введенному числу. 10(8), 20(16), 1(1), 13(16)
+"""
+
+
+def the_closest_to_two(first_num):
+    iterator = 0
+    num = first_num
+    while num / 2 > 1:
+        num = num / 2
+        iterator += 1
+    if (first_num - 2 ** iterator) / 2 ** iterator >= 0.5:
+        return 'Ближайшая степень ' \
+               'двойки будет {}'.format(2 ** (iterator + 1))
+    else:
+        return 'Ближайшая степень ' \
+               'двойки будет {}'.format(2 ** iterator)
+
+
+inputted_num = int(input('Введите число: '))
+print(the_closest_to_two(inputted_num))
