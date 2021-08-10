@@ -26,8 +26,8 @@ class TestCase(unittest.TestCase):
         self.assertEqual(result, expected)
 
     @ddt.data(
-        (2, 10 ** 3, 10 ** 9, 442530011398),
-        (2, 10 ** 6, 10 ** 9, 450186511399998),
+        (2, 10 ** 3, 10 ** 9, 442530011399),
+        (2, 10 ** 6, 10 ** 9, 450186511399999),
 
     )
     @ddt.unpack
@@ -46,10 +46,18 @@ class TestCase(unittest.TestCase):
         self.assertEqual(result, expected)
 
         @ddt.data(
-            ('2', 10 ** 3, 10 ** 9, 442530011398),
-            (2, '10 ** 3', 10 ** 9, 442530011398),
-            (2, 10 ** 3, '10 ** 9', 442530011398),
-            (2, 10 ** 3, 10 ** 9, '442530011398'),
+            ('2', 10 ** 3, 10 ** 9, TypeError),
+            (2, '10 ** 3', 10 ** 9, TypeError),
+            (2, 10 ** 3, '10 ** 9', TypeError),
+            (2, 10 ** 3, [10 ** 9], TypeError),
+            (2, [10 ** 3], 10 ** 9, TypeError),
+            ([2], 10 ** 3, 10 ** 9, TypeError),
+            ((2, ), 10 ** 3, 10 ** 9, TypeError),
+            (2, (10 ** 3), 10 ** 9, TypeError),
+            (2, 10 ** 3, (10 ** 9), TypeError),
+            ({2}, 10 ** 3, 10 ** 9, TypeError),
+            (2, {10 ** 3}, 10 ** 9, TypeError),
+            (2, 10 ** 3, {10 ** 9}, TypeError),
         )
         @ddt.unpack
         def test_negative_data_type(
