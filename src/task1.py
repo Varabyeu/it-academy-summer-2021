@@ -145,15 +145,15 @@ class MarketDepartmentAnalysis:
                                              ' the beginning')
 
     def fin_situation(self):
-        staff_employment = getattr(TechDepAnalysis,
+        stf_mplmnt = getattr(TechDepAnalysis,
                                    'curr_staff_employment')
-        cost_monthly = self.cost_price_month_work * staff_employment
-        budget_load_end = self.curr_fin_balance - cost_monthly
+        cst_mothl = self.cost_price_month_work * stf_mplmnt
+        budget_load_end = self.curr_fin_balance - cst_mothl
         if budget_load_end > 0:
-            budget_status_end = 'good'
+            bdgt_stts_nd = 'good'
         else:
-            budget_status_end = 'bad'
-        return staff_employment, budget_load_end, cost_monthly, budget_status_end
+            bdgt_stts_nd = 'bad'
+        return stf_mplmnt, budget_load_end, cst_mothl, bdgt_stts_nd
 
     def analysis_terms(self):
         tech_terms = TechDepAnalysis(order.order_data_tech()).analysis_terms()
