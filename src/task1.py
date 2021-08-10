@@ -146,7 +146,7 @@ class MarketDepartmentAnalysis:
 
     def fin_situation(self):
         stf_mplmnt = getattr(TechDepAnalysis,
-                                   'curr_staff_employment')
+                             'curr_staff_employment')
         cst_mothl = self.cost_price_month_work * stf_mplmnt
         budget_load_end = self.curr_fin_balance - cst_mothl
         if budget_load_end > 0:

@@ -6,7 +6,7 @@
 
 
 class TooManyErrors(Exception):
-    def __init__(self,  message='Ошибка не устранилась'):
+    def __init__(self, message='Ошибка не устранилась'):
         self.message = message
         super().__init__(self.message)
 
