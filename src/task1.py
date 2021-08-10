@@ -153,8 +153,7 @@ class MarketDepartmentAnalysis:
             budget_status_end = 'good'
         else:
             budget_status_end = 'bad'
-        return staff_employment, budget_load_end, \
-               cost_monthly, budget_status_end
+        return staff_employment, budget_load_end, cost_monthly, budget_status_end
 
     def analysis_terms(self):
         tech_terms = TechDepAnalysis(order.order_data_tech()).analysis_terms()
@@ -241,5 +240,4 @@ with open('Contract_evaluation_report.txt', 'w') as report:
         'Start of the order: {}\n'.format(marketing_dep.analysis_start_date()[0]),
         'Finally: {}\n\n'.format(marketing_dep.analysis_finally()),
         'SUMMARY:\n',
-        'You should consider this order more carefully'
-        ])
+        'You should consider this order more carefully'])
