@@ -6,7 +6,7 @@
 
 
 class TooManyErrors(Exception):
-    def __init__(self,  message='Ошибка не устранилась', ):
+    def __init__(self,  message='Ошибка не устранилась'):
         self.message = message
         super().__init__(self.message)
 
@@ -20,7 +20,7 @@ def counter(times):
             i = 0
             while i < times:
                 try:
-                    a = func(*args)
+                    func(*args)
                     return func
                     break
                 except TypeError:

@@ -19,4 +19,3 @@ def f_n(start, end, limit):
             x_temp, x = x, pow(num, x_temp, limit)
         sum_f_n += x
     return sum_f_n
-
