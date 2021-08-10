@@ -92,7 +92,8 @@ class TechDepAnalysis:
                                  'modernization']
 
         if self.type.lower() not in possible_type_objects:
-            object_type_verdict = 'We cannot do this order. We have not enough' \
+            object_type_verdict = 'We cannot do this order. ' \
+                                  'We have not enough' \
                                   'qualification.'
             type_status = False
         else:
@@ -131,7 +132,7 @@ class TechDepAnalysis:
         return final_verdict
 
 
-class MarketDepartmentAnalysis:
+class MarketDepAnalysis:
     cost_price_month_work = 10000
     curr_fin_balance = 200000
 
@@ -180,7 +181,7 @@ class MarketDepartmentAnalysis:
                 prepaid_status = 'Prepaid satisfies.'
         return prepaid_status
 
-    def analysis_start_date(self):
+    def analys_start(self):
         if self.fin_situation()[1] > 0:
             start_date_verdict = 'We have enough finance to ' \
                                  'wait a few weeks.'
@@ -193,11 +194,11 @@ class MarketDepartmentAnalysis:
 
     def analysis_finally(self):
 
-        all_obj = getmembers(MarketDepartmentAnalysis)
+        all_obj = getmembers(MarketDepAnalysis)
         list_all_func = [f[0] for f in all_obj if isfunction(f[1])]
         all_defs = []
         for func in list_all_func[2:]:
-            call_def = getattr(MarketDepartmentAnalysis, func)
+            call_def = getattr(MarketDepAnalysis, func)
             all_defs.append(call_def)
             if all(all_defs) is True:
                 final_verdict = 'It is interesting order.'
@@ -214,8 +215,8 @@ tech_verdict_terms = tech_dep.analysis_terms()
 tech_verdict_object = tech_dep.analysis_object()
 tech_verdict_type_object = tech_dep.analysis_type_object()
 tech_verdict_final_verdict = tech_dep.final_analysis()
-marketing_dep = MarketDepartmentAnalysis(order.order_data_marketing())
-mark_terms = marketing_dep.analysis_price()
+market_dep = MarketDepAnalysis(order.order_data_marketing())
+mark_terms = market_dep.analysis_price()
 
 with open('Contract_evaluation_report.txt', 'w') as report:
     report.writelines([
@@ -227,17 +228,17 @@ with open('Contract_evaluation_report.txt', 'w') as report:
         'Finally: {}\n'.format(tech_verdict_final_verdict),
         '\nMarketing department verdict:\n\n',
         'Finance situation overwiew:\n',
-        'Current balance is ${}'.format(marketing_dep.curr_fin_balance),
+        'Current balance is ${}'.format(market_dep.curr_fin_balance),
         ', monthly ',
-        'cost price is ${}.\n'.format(marketing_dep.fin_situation()[2]),
+        'cost price is ${}.\n'.format(market_dep.fin_situation()[2]),
         'At the end of available orders financial balance will be',
-        ' ${}. \nIt is {}.'.format(marketing_dep.fin_situation()[1],
-                                   marketing_dep.fin_situation()[3]),
+        ' ${}. \nIt is {}.'.format(market_dep.fin_situation()[1],
+                                   market_dep.fin_situation()[3]),
         '\n\nFinance aspects of potential order:\nTerms:{}\n'.format(
-            marketing_dep.analysis_terms()),
-        'Price: {}\n'.format(marketing_dep.analysis_price()),
-        'Prepayment: {}\n'.format(marketing_dep.analysis_prepaid()),
-        'Start of the order: {}\n'.format(marketing_dep.analysis_start_date()[0]),
-        'Finally: {}\n\n'.format(marketing_dep.analysis_finally()),
+            market_dep.analysis_terms()),
+        'Price: {}\n'.format(market_dep.analysis_price()),
+        'Prepayment: {}\n'.format(market_dep.analysis_prepaid()),
+        'Start of the order: {}\n'.format(market_dep.analys_start()[0]),
+        'Finally: {}\n\n'.format(market_dep.analysis_finally()),
         'SUMMARY:\n',
         'You should consider this order more carefully'])
