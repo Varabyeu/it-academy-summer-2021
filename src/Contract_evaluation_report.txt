@@ -1,0 +1,25 @@
+Object name: Power plant construction
+
+Technical department verdict:
+
+Terms: Impossible. Need to adjust the start date or cancel this order.
+Object: It is OK. We can do this.
+Type of object: It is OK. We have qualification in this.
+Finally: We not able to complete this order. We have no enough time to do this.
+
+Marketing department verdict:
+
+Finance situation overwiew:
+Current balance is $200000, monthly cost price is $80000.
+At the end of available orders financial balance will be $120000. 
+It is good.
+
+Finance aspects of potential order:
+Terms:It is unreal. We cannot use our specialists.
+Price: Price satisfies.
+Prepayment: Prepaid not satisfies. Will be better to raise it.
+Start of the order: We have enough finance to wait a few weeks.
+Finally: It is interesting order.
+
+SUMMARY:
+You should consider this order more carefully
