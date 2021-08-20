@@ -195,7 +195,8 @@ class MarketDepAnalysis:
         """Analysing current financial situation
 
         Function analyzes current financial situation to determine how necessary
-        this object"""
+        this object
+        """
         stf_mplmnt = getattr(TechDepAnalysis,
                              'curr_staff_employment')
         cst_mothl = self.cost_price_month_work * stf_mplmnt

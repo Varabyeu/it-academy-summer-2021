@@ -5,7 +5,6 @@ import unittest
 
 @ddt.ddt
 class TestCase(unittest.TestCase):
-    
     @ddt.data(
         ('1', 0),
         ('1 1', 1),
