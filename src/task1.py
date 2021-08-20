@@ -6,16 +6,8 @@
 различных действий. Программа должна инстанцировать объекты и
 эмулировать какую-либо ситуацию - вызывать методы, взаимодействие
 объектов и т.д.
-
 Модель: оценка заказа на выполнение работ.
-Оценка подразумевает под собой сопоставление сложности работ с их
-стоимостью и сроками выполнения.
-order_name - наименование работы (строительство ТЭЦ)
-order_object - объект работы (ТЭЦ)
-order_type - тип работы (новое строительство)
-order_terms - сроки выполнения работ(48 месяцев)
-order_price - стоимость услуги ($10 000 000)
-order_start_date - отсрочка старта выполнения заказа (в месяцах)
+
 """
 from inspect import getmembers
 from inspect import isfunction
@@ -25,12 +17,24 @@ class OrderData:
     """Docstring
 
     This class get order data and makes
-     packages to transfer to departments
-     """
+    packages to transfer to departments
+    """
 
     def __init__(self, order_name, order_object,
                  order_type, order_terms, order_price,
                  prepaid_expense, order_start_date):
+        """Docstring
+
+        Analysis is used to compare complexity of the works with its
+        price and terms.
+        order_name - name of the object (строительство ТЭЦ)
+        order_object - object describe(ТЭЦ)
+        order_type - work type(новое строительство)
+        order_terms -work terms in month(48)
+        order_price - consumer price in dollars(10 000 000)
+        order_start_date -start of of the work since today in months(2)
+        prepaid_expense - count with prepaid
+        """
         self.name = order_name
         self.object = order_object
         self.type = order_type
@@ -40,6 +44,12 @@ class OrderData:
         self.start_date = order_start_date
 
     def order_data_tech(self):
+        """Making dictionary
+
+        This function makes dictionary using the inputted
+        data which is need to post to marketing department
+        """
+
         tech_data_order = {
             'Order name': self.name,
             'Object': self.object,
@@ -50,6 +60,11 @@ class OrderData:
         return tech_data_order
 
     def order_data_marketing(self):
+        """Making dictionary
+
+        This function makes dictionary using the inputted
+        data which is need to post to marketing department
+        """
         order_data_marketing = {
             'Order name': self.name,
             'Terms (months)': self.terms,
@@ -61,10 +76,16 @@ class OrderData:
 
 
 class TechDepAnalysis:
+    """Class docstring
+
+    This class is processing inputted data end existing conditions
+    to make verdict: is this object can be fulfilled by department
+    or not
+    """
     curr_staff_employment = 8
 
     def __init__(self, tech_data):
-
+        """In this method makes variables defined"""
         self.name = tech_data.get('Order name')
         self.object = tech_data.get('Object')
         self.type = tech_data.get('Type of order')
@@ -72,6 +93,12 @@ class TechDepAnalysis:
         self.start_date = tech_data.get('Months before the beginning')
 
     def analysis_object(self):
+        """Comparing possibility
+
+        This function compares current object with lists of possible
+        objects to work. If current object in list - this work can be
+        fulfilled
+        """
         possible_objects = ['power plant', 'boiler plant',
                             'hydroelectric power plant',
                             'solar power plant',
@@ -88,6 +115,12 @@ class TechDepAnalysis:
         return object_verdict, object_status
 
     def analysis_type_object(self):
+        """Do the organization have enough skills to do project
+
+        This function compares current object with lists of skills in
+        building objects. If current object in list - this work can be
+        fulfilled
+        """
         possible_type_objects = ['new construction', 'reconstruction',
                                  'modernization']
 
@@ -102,7 +135,9 @@ class TechDepAnalysis:
         return object_type_verdict, type_status
 
     def analysis_terms(self):
-
+        """Function analyzes current load and and determines can the
+        organization do this work in this terms
+        """
         if self.start_date < self.curr_staff_employment:
             terms_verdict = 'Impossible. ' \
                             'Need to adjust the start date or ' \
@@ -114,6 +149,8 @@ class TechDepAnalysis:
         return terms_verdict, terms_status
 
     def final_analysis(self):
+        """Function gives final verdict of department"""
+
         analyzes = [self.analysis_object()[1],
                     self.analysis_type_object()[1],
                     self.analysis_terms()[1]]
@@ -133,10 +170,17 @@ class TechDepAnalysis:
 
 
 class MarketDepAnalysis:
+    """Docstring
+
+    This class is processing inputted data end existing conditions
+    to make verdict: is this object can be fulfilled by department
+    or not
+    """
     cost_price_month_work = 10000
     curr_fin_balance = 200000
 
     def __init__(self, marketing_data):
+        """In this method makes variables defined"""
         self.marketing_data = marketing_data
         self.name = marketing_data.get('Order name')
         self.terms = marketing_data.get('Terms (months)')
@@ -146,6 +190,8 @@ class MarketDepAnalysis:
                                              ' the beginning')
 
     def fin_situation(self):
+        """Function analyzes current financial situation to determine how necessary
+        this object"""
         stf_mplmnt = getattr(TechDepAnalysis,
                              'curr_staff_employment')
         cst_mothl = self.cost_price_month_work * stf_mplmnt
@@ -157,6 +203,7 @@ class MarketDepAnalysis:
         return stf_mplmnt, budget_load_end, cst_mothl, bdgt_stts_nd
 
     def analysis_terms(self):
+        """This function analyzes terms by current load"""
         tech_terms = TechDepAnalysis(order.order_data_tech()).analysis_terms()
         if tech_terms[1] is True:
             terms_status = 'It is real.'
@@ -165,6 +212,7 @@ class MarketDepAnalysis:
         return terms_status
 
     def analysis_price(self):
+        """This function analyzes the customer's proposal as a whole"""
         cost_monthly = self.fin_situation()[2]
         if self.price / self.terms >= cost_monthly:
             price_status = 'Price satisfies.'
@@ -173,6 +221,7 @@ class MarketDepAnalysis:
         return price_status
 
     def analysis_prepaid(self):
+        """Function analyzes the customer's proposal in prepaid"""
         if self.prepaid > 0:
             if self.prepaid < 15:
                 prepaid_status = 'Prepaid not satisfies.' \
@@ -182,6 +231,7 @@ class MarketDepAnalysis:
         return prepaid_status
 
     def analys_start(self):
+        """Function makes a conclusion about the desired start date"""
         if self.fin_situation()[1] > 0:
             start_date_verdict = 'We have enough finance to ' \
                                  'wait a few weeks.'
@@ -193,7 +243,7 @@ class MarketDepAnalysis:
         return start_date_verdict, start_date_status
 
     def analysis_finally(self):
-
+        """Function gives final verdict of department"""
         all_obj = getmembers(MarketDepAnalysis)
         list_all_func = [f[0] for f in all_obj if isfunction(f[1])]
         all_defs = []

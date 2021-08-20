@@ -18,6 +18,11 @@ class TestCase(unittest.TestCase):
             input_data_limit,
             expected
     ):
+        """This function is used to be a test for Euler project task
+
+        This test gets inputted data and compares result of function
+        with expected one using assertEqual
+        """
         result = task4.f_n(
             input_data_start,
             input_data_end,
@@ -38,6 +43,11 @@ class TestCase(unittest.TestCase):
             input_data_limit,
             expected
     ):
+        """This function is used to be a test for Euler project task
+
+        This negative test gets inputted data and compares result
+         of function with expected one using assertEqual
+        """
         result = task4.f_n(
             input_data_start,
             input_data_end,
@@ -67,6 +77,11 @@ class TestCase(unittest.TestCase):
                 input_data_limit,
                 expected
         ):
+            """This function is used to be a test for Euler project task
+
+            This negative test gets inputted data and expect an inputted
+            type of error as a result of function
+            """
             with self.assertRaises(expected):
                 task4.f_n(
                     input_data_start,

@@ -5,7 +5,7 @@ import unittest
 
 @ddt.ddt
 class TestCase(unittest.TestCase):
-
+    
     @ddt.data(
         ('1', 0),
         ('1 1', 1),
@@ -17,7 +17,7 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_positive(self, input_data, expected):
-        """function {0} and {1} """
+        """This function is used to be a positive test"""
         result = task4_hw3.function(input_data)
         self.assertEqual(result, expected)
 
@@ -29,13 +29,10 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_negative(self, input_data, expected):
-        """function {0} and {1} """
+        """This function is used to be a negative test"""
         with self.assertRaises(expected):
             task4_hw3.function(input_data)
 
-
-if __name__ == '__name__':
-    unittest.main()
 
 if __name__ == '__name__':
     unittest.main()

@@ -6,38 +6,45 @@
 
 
 class TooManyErrors(Exception):
-    def __init__(self, message='Ошибка не устранилась'):
-        self.message = message
-        super().__init__(self.message)
-
-    def __str__(self):
-        return self.message
+    """Empty class of exceptions"""
+    pass
 
 
-def counter(times):
+def counter(n):
+    """Counter of exceptions"""
     def decorator(func):
-        def call(*args):
-            i = 0
-            while i < times:
-                try:
-                    func(*args)
-                    return func
+        """Decorates func to count"""
+        def caller(*args):
+
+            count = 0
+            while n > count:
+                result = func(*args)
+                if type(result) is float:
                     break
-                except TypeError:
-                    i += 1
-                    print('Есть ошибка, необходимо устранить')
-                    if i == times:
-                        raise TooManyErrors
-        return call
+                elif type(result) is float:
+                    break
+                else:
+                    count += 1
+                    if n == count:
+                        raise TooManyErrors('Raised TooManyErrors')
+        return caller
     return decorator
 
 
+
 @counter(3)
-def simple(n):
-    if type(n) is str:
-        print(n)
-    else:
-        print(n / 2)
+def division(a):
+    try:
+        result = a / 2
+    except TypeError:
+        result = 'raised TypeError'
+    return result
 
 
-simple(["pip"])
+print(division("2"))
+print(division(2))
+print(division(2))
+print(division(4))
+print(division(8))
+print(division("2"))
+print(division(6))
