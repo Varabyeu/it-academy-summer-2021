@@ -194,8 +194,8 @@ class MarketDepAnalysis:
     def fin_situation(self):
         """Analysing current financial situation
 
-        Function analyzes current financial situation to determine how necessary
-        this object
+        Function analyzes current financial situation to determine 
+        how necessary this object
         """
         stf_mplmnt = getattr(TechDepAnalysis,
                              'curr_staff_employment')
