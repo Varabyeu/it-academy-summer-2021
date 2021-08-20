@@ -31,9 +31,8 @@ def counter(n):
     return decorator
 
 
-
 @counter(3)
-def division(a):
+def simple_func(a):
     try:
         result = a / 2
     except TypeError:
@@ -41,10 +40,10 @@ def division(a):
     return result
 
 
-print(division("2"))
-print(division(2))
-print(division(2))
-print(division(4))
-print(division(8))
-print(division("2"))
-print(division(6))
+print(simple_func("2"))
+print(simple_func(2))
+print(simple_func(2))
+print(simple_func(4))
+print(simple_func(8))
+print(simple_func("2"))
+print(simple_func(6))

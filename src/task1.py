@@ -135,7 +135,9 @@ class TechDepAnalysis:
         return object_type_verdict, type_status
 
     def analysis_terms(self):
-        """Function analyzes current load and and determines can the
+        """Analysing current load
+
+        Function analyzes current load and and determines can the
         organization do this work in this terms
         """
         if self.start_date < self.curr_staff_employment:
@@ -190,7 +192,9 @@ class MarketDepAnalysis:
                                              ' the beginning')
 
     def fin_situation(self):
-        """Function analyzes current financial situation to determine how necessary
+        """Analysing current financial situation
+
+        Function analyzes current financial situation to determine how necessary
         this object"""
         stf_mplmnt = getattr(TechDepAnalysis,
                              'curr_staff_employment')
